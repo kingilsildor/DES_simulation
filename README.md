@@ -1,17 +1,4 @@
-# Assignment 1 for Numerical Algorithms
-
-## Generating assignment outputs
-
-For this assignment we need to submit the Jupyter notebook (executed, with cell output),
-as well as a PDF version of the same thing. Since committing notebooks with cell output 
-to git can result in all sorts of issues, particularly in collaborative work, we've set 
-up a process to automatically generate these outputs using GitHub Actions. 
-
-Whenever the main branch is updated on GitHub, this triggers a GitHub Action which will
-run the [hw1.ipynb](hw1.ipynb) notebook. The result is then converted into PDF format
-using nbconvert. Both the executed notebook and PDF are exported, and can be downloaded
-from the GitHub repo, by navigating to `Actions` -> `<top workflow run>` -> 
-`Artifacts/results`.
+# Assignment 2 for Stochastic Simulations
 
 ## Getting started
 
@@ -71,22 +58,3 @@ uv add jupyterlab
 # Start a JupyterLab server
 uv run jupyter lab
 ```
-
-
-## Pre-commit hooks
-
-I've included a couple of pre-commit hooks 
-(see [.pre-commit-config.yaml](.pre-commit-config.yaml)) which will be executed every 
-time we commit code to git. Two of these hooks come from the 
-[ruff](https://github.com/astral-sh/ruff) Python linter:
-- `ruff`: lints Python code to ensure it adheres to the PEP8 standards. Includes a bunch of nice things like automatic sorting of imports by name and type.
-- `ruff format`: formats Python code in a consistent manner, including removing excess whitespace, swapping tabs for spaces, and a _tonne_ of other things.
-
-These should help to keep code tidy and consistent, with no extra effort on our part. 
-
-The third hook is from the [nbstripout](https://github.com/kynan/nbstripout) project,
-and will remove the cell outputs from every notebook before committing. This is good 
-practice and helps to avoid merge conflicts, especially when collaborating on notebooks.
-
-All of the hooks should run automagically if you've followed the setup instructions for
-[installing pre-commit with uv](#getting-started).
